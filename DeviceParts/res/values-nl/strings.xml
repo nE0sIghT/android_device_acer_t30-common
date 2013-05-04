@@ -14,16 +14,16 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_name">Ajustes avanzados</string>
-    <string name="category_screen_title">Pantalla</string>
-    <string name="touch_sensitivity_head">Sensibilidad táctil</string>
-    <string name="touch_sensitivity_very_high">Muy alta</string>
-    <string name="touch_sensitivity_high">Alta</string>
-    <string name="touch_sensitivity_medium">Media</string>
-    <string name="touch_sensitivity_low">Baja</string>
-    <string name="category_power_title">Energía</string>
-    <string name="power_mode_head">Modo de energía</string>
-    <string name="power_mode_high">Alto rendimiento</string>
-    <string name="power_mode_medium">Equilibrado (recomendado)</string>
-    <string name="power_mode_low">Ahorro de energía</string>
+    <string name="app_name">Geavanceerde instellingen</string>
+    <string name="category_screen_title">Scherm</string>
+    <string name="touch_sensitivity_head">Aanraakgevoeligheid</string>
+    <string name="touch_sensitivity_very_high">Zeer hoog</string>
+    <string name="touch_sensitivity_high">Hoog</string>
+    <string name="touch_sensitivity_medium">Gemiddeld</string>
+    <string name="touch_sensitivity_low">Laag</string>
+    <string name="category_power_title">Energie</string>
+    <string name="power_mode_head">Energiemodus</string>
+    <string name="power_mode_high">Hoge prestaties</string>
+    <string name="power_mode_medium">Gebalanceerd (aanbevolen)</string>
+    <string name="power_mode_low">Energiebesparing</string>
 </resources>

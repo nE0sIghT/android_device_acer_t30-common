@@ -1,28 +1,42 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2013 The CyanogenMod Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-	<PreferenceCategory
-	    android:title="@string/category_screen_title">
-	    <!-- Touch Sensitivity -->
-	    <ListPreference
-	        android:key="touch_sensitivity_raw"
-	        android:title="@string/touch_sensitivity_head"
-	        android:summary="%s"
-	        android:entries="@array/touch_sensitivity_entries"
-	        android:entryValues="@array/touch_sensitivity_entries_values"
-	        android:defaultValue="70" />
-	</PreferenceCategory>
+    <PreferenceCategory
+        android:title="@string/category_screen_title">
+        <!-- Touch Sensitivity -->
+        <ListPreference
+            android:key="touch_sensitivity_raw"
+            android:title="@string/touch_sensitivity_head"
+            android:summary="%s"
+            android:entries="@array/touch_sensitivity_entries"
+            android:entryValues="@array/touch_sensitivity_entries_values"
+            android:defaultValue="70" />
+    </PreferenceCategory>
 
-	<PreferenceCategory
-	    android:title="@string/category_power_title">
-	    <!-- Touch Sensitivity -->
-	    <ListPreference
-	        android:key="power_mode"
-	        android:title="@string/power_mode_head"
-	        android:summary="%s"
-	        android:entries="@array/power_mode_entries"
-	        android:entryValues="@array/power_mode_entries_values"
-	        android:defaultValue="2" />
-	</PreferenceCategory>
+    <PreferenceCategory
+        android:title="@string/category_power_title">
+        <!-- Touch Sensitivity -->
+        <ListPreference
+            android:key="power_mode"
+            android:title="@string/power_mode_head"
+            android:summary="%s"
+            android:entries="@array/power_mode_entries"
+            android:entryValues="@array/power_mode_entries_values"
+            android:defaultValue="2" />
+    </PreferenceCategory>
 
 </PreferenceScreen>
