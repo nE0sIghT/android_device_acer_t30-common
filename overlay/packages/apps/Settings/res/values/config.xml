@@ -16,8 +16,8 @@
 -->
 
 <resources xmlns:xliff="urnasis:names:tc:xliff:document:1.2 ">
-    <!-- Show Expanded Desktop preference -->
-    <bool name="config_show_expandedDesktop">true</bool>
+    <!-- Show Expanded Desktop preference
+    <bool name="config_show_expandedDesktop">true</bool> -->
 
     <!-- Whether the device support custom performance profiles. Leave empty when
          the device do not support it. -->
