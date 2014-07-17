@@ -202,7 +202,7 @@
     <integer name="config_safe_media_volume_index">6</integer>
 
     <!-- Device has a h/w rotation lock switch -->
-    <bool name="config_hasRotationLockSwitch">true</bool>
+    <!--bool name="config_hasRotationLockSwitch">true</bool-->
 
     <!-- Hardware 'face' keys present on the device, stored as a bit field.
          This integer should equal the sum of the corresponding value for each
