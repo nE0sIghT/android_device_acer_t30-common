@@ -15,7 +15,7 @@ PRODUCT_PROPERTY_OVERRIDES := \
     tf.enable=y \
     wifi.interface=wlan0 \
     ro.carrier=wifi-only \
-    ro.zygote.disable_gl_preload=true \
+    ro.zygote.disable_gl_preload=true
 
 # Set default USB interface
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
@@ -73,13 +73,24 @@ PRODUCT_PACKAGES := \
     audio.a2dp.default \
     audio.usb.default \
     a1026_init \
-    librs_jni \
     make_ext4fs \
     setup_fs \
     l2ping \
     hcitool \
     bttest \
     com.android.future.usb.accessory
+
+# Live wallpaper packages
+PRODUCT_PACKAGES += \
+    LiveWallpapers \
+    LiveWallpapersPicker \
+    MagicSmokeWallpapers \
+    VisualizationWallpapers \
+    librs_jni
+
+# Publish that we support the live wallpaper feature.
+PRODUCT_COPY_FILES += \
+    packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:/system/etc/permissions/android.software.live_wallpaper.xml
 
 PRODUCT_CHARACTERISTICS := tablet
 

@@ -66,6 +66,9 @@ TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
 # Sensors
 COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
 
+# Camera
+USE_CAMERA_STUB := false
+
 # Samsung EMMC brick bug
 # Already disabled in kernel, but disable again for safety
 BOARD_SUPPRESS_EMMC_WIPE := true
