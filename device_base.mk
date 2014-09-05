@@ -95,3 +95,5 @@ PRODUCT_COPY_FILES += \
 
 WIFI_BAND := 802_11_BG
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4330/device-bcm.mk)
+
+$(call inherit-product-if-exists, vendor/acer/t30-common/t30-common-vendor.mk)

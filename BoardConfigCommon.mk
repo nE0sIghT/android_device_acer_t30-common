@@ -49,6 +49,8 @@ BOARD_USES_TINY_AUDIO_HW := true
 
 BOARD_USES_GENERIC_INVENSENSE := false
 
+-include vendor/acer/t30-common/BoardConfigVendor.mk
+
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
