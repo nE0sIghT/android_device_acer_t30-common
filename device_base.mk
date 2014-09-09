@@ -10,6 +10,7 @@ DEVICE_PACKAGE_OVERLAYS += device/acer/t30-common/overlay
 
 PRODUCT_PROPERTY_OVERRIDES := \
     ro.opengles.version=131072 \
+    sys.max_texture_size=2048 \
     persist.tegra.nvmmlite=1 \
     nvidia.hwc.mirror_mode=crop \
     tf.enable=y \
