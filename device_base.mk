@@ -19,7 +19,7 @@ PRODUCT_PROPERTY_OVERRIDES := \
 
 # Set default USB interface
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-	persist.sys.usb.config=mtp
+	persist.sys.usb.config=mtp,adb
 
 # Don't store dalvik on /cache, it gets annoying when /cache is wiped
 # by the bootloader everytime we boot into recovery
@@ -67,7 +67,7 @@ PRODUCT_COPY_FILES += \
     device/acer/t30-common/prebuilt/usr/keylayout/acer-dock.kl:system/usr/keylayout/acer-dock.kl \
     device/acer/t30-common/prebuilt/usr/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl
 
-PRODUCT_PACKAGES := \
+PRODUCT_PACKAGES += \
     audio.primary.tegra \
     libaudioutils \
     audio.a2dp.default \
