@@ -117,9 +117,16 @@
 
          Must be overridden in platform specific overlays -->
      <integer-array name="config_autoBrightnessLevels">
-         <item>20</item>
-         <item>150</item>
-         <item>1500</item>
+        <item>10</item>
+        <item>100</item>
+        <item>250</item>
+        <item>450</item>
+        <item>900</item>
+        <item>1800</item>
+        <item>2400</item>
+        <item>3000</item>
+        <item>3600</item>
+        <item>4193</item>
      </integer-array>
 
 
@@ -128,9 +135,16 @@
          than the size of the config_autoBrightnessLevels array.
          This must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>30</item>
-        <item>51</item>
-        <item>146</item>
+        <item>1</item>
+        <item>5</item>
+        <item>15</item>
+        <item>25</item>
+        <item>35</item>
+        <item>60</item>
+        <item>100</item>
+        <item>130</item>
+        <item>170</item>
+        <item>210</item>
         <item>255</item>
     </integer-array>
 
@@ -139,9 +153,16 @@
          than the size of the config_autoBrightnessLevels array.
          This must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessButtonBacklightValues">
-        <item>30</item>
-        <item>51</item>
-        <item>146</item>
+        <item>1</item>
+        <item>5</item>
+        <item>15</item>
+        <item>25</item>
+        <item>35</item>
+        <item>60</item>
+        <item>100</item>
+        <item>130</item>
+        <item>170</item>
+        <item>210</item>
         <item>255</item>
     </integer-array>
 
@@ -196,7 +217,7 @@
     <integer name="config_multiuserMaximumUsers">8</integer>
 
     <!-- reference volume index for music stream to limit headphone volume and display warning -->
-    <integer name="config_safe_media_volume_index">6</integer>
+    <integer name="config_safe_media_volume_index">10</integer>
 
     <!-- Device has a h/w rotation lock switch -->
     <bool name="config_hasRotationLockSwitch">true</bool>
