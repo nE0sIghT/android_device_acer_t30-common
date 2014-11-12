@@ -84,16 +84,25 @@ BOARD_SEPOLICY_DIRS += \
 	device/acer/t30-common/sepolicy
 
 BOARD_SEPOLICY_UNION += \
-	file_contexts \
-	genfs_contexts \
-	app.te \
-	device.te \
-	drmserver.te \
-	file.te \
-	mediaserver.te \
-	surfaceflinger.te \
-	system.te \
-	zygote.te
+        file_contexts \
+        genfs_contexts \
+        bluetooth.te \
+        device.te \
+        domain.te \
+        drmserver.te \
+        init_shell.te \
+        file.te \
+        gpsd.te \
+        keystore.te \
+        lmkd.te \
+        mediaserver.te \
+        rild.te \
+        sensors_config.te \
+        surfaceflinger.te \
+        system_app.te \
+        system_server.te \
+        ueventd.te \
+        vold.te
 
 # Recovery
 TARGET_RECOVERY_FSTAB := device/acer/t30-common/prebuilt/ramdisk/fstab.acer
