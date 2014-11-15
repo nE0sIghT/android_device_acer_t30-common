@@ -1,3 +1,5 @@
+ANDROID_COMMON_BUILD_MK = true
+
 TARGET_BOARD_PLATFORM := tegra
 
 TARGET_CPU_ABI := armeabi-v7a
@@ -52,9 +54,11 @@ BOARD_USES_GENERIC_INVENSENSE := false
 -include vendor/acer/t30-common/BoardConfigVendor.mk
 
 # Bluetooth
-BOARD_HAVE_BLUETOOTH := true
-BOARD_HAVE_BLUETOOTH_BCM := true
-BOARD_BLUEDROID_VENDOR_CONF := device/acer/t30-common/libbt_vndcfg.txt
+#BOARD_HAVE_BLUETOOTH := true
+#BOARD_HAVE_BLUETOOTH_BCM := true
+#BOARD_BLUEDROID_VENDOR_CONF := device/acer/t30-common/libbt_vndcfg.txt
+BOARD_HAVE_BLUETOOTH := false
+BOARD_HAVE_BLUETOOTH_BCM := false
 
 USE_OPENGL_RENDERER := true
 BOARD_EGL_CFG := device/acer/t30-common/prebuilt/etc/egl.cfg

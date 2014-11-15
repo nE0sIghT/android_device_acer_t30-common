@@ -78,16 +78,17 @@ PRODUCT_PACKAGES += \
     setup_fs \
     l2ping \
     hcitool \
-    bttest \
     com.android.future.usb.accessory
 
+###    bttest \
+
 # Live wallpaper packages
-PRODUCT_PACKAGES += \
-    LiveWallpapers \
-    LiveWallpapersPicker \
-    MagicSmokeWallpapers \
-    VisualizationWallpapers \
-    librs_jni
+#PRODUCT_PACKAGES += \
+#    LiveWallpapers \
+#    LiveWallpapersPicker \
+#    MagicSmokeWallpapers \
+#    VisualizationWallpapers \
+#    librs_jni
 
 # Publish that we support the live wallpaper feature.
 PRODUCT_COPY_FILES += \
