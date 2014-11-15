@@ -222,14 +222,6 @@
     <!-- reference volume index for music stream to limit headphone volume and display warning -->
     <integer name="config_safe_media_volume_index">10</integer>
 
-    <!-- Device has a h/w rotation lock switch -->
-    <bool name="config_hasRotationLockSwitch">true</bool>
-
-    <!-- Maximum wallpaper width for devices with very high-res screen (1920x1200)
-         the wallpaper width suggestion by the launcher may be too large for
-         the GPU to handle. -->
-    <integer name="config_wallpaperMaxWidth">2048</integer>
-
     <!-- Disable lockscreen translucent decor by default -->
     <bool name="config_enableLockScreenTranslucentDecor">true</bool>
 
