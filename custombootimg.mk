@@ -1,10 +1,18 @@
 LZMA_BIN := /usr/bin/lzma
 
+recovery_uncompressed_ramdisk := $(PRODUCT_OUT)/ramdisk-recovery.cpio
+
+$(recovery_uncompressed_ramdisk): $(MINIGZIP) \
+	$(TARGET_RECOVERY_ROOT_TIMESTAMP)
+	@echo -e ${CL_CYN}"----- Making uncompressed recovery ramdisk ------"${CL_RST}
+	$(MKBOOTFS) $(TARGET_RECOVERY_ROOT_OUT) > $@
 
 $(INSTALLED_RECOVERYIMAGE_TARGET): $(MKBOOTIMG) \
 		$(recovery_ramdisk) \
-		$(recovery_kernel)
+		$(recovery_kernel) \
+		$(recovery_uncompressed_ramdisk)
 	@echo ----- Compressing recovery ramdisk with lzma ------
+	rm -vf $(recovery_uncompressed_ramdisk).lzma
 	$(LZMA_BIN) --force $(recovery_uncompressed_ramdisk)
 	$(hide) cp $(recovery_uncompressed_ramdisk).lzma $(recovery_ramdisk)
 	@echo ----- Making recovery image ------
