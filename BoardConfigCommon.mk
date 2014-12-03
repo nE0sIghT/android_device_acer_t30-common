@@ -24,6 +24,14 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 629145600
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 29905387520
 BOARD_FLASH_BLOCK_SIZE := 4096
 
+# Recovery
+TARGET_RECOVERY_FSTAB := device/acer/t30-common/prebuilt/ramdisk/fstab.acer
+TARGET_NO_SEPARATE_RECOVERY := true
+BOARD_HAS_NO_SELECT_BUTTON := true
+# Use this flag if the board has a ext4 partition larger than 2gb
+BOARD_HAS_LARGE_FILESYSTEM := true
+BOARD_CUSTOM_BOOTIMG_MK := device/acer/t30-common/custombootimg.mk
+
 # Wifi related defines
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
 WPA_SUPPLICANT_VERSION      := VER_0_8_X
@@ -83,6 +91,9 @@ BOARD_HAL_STATIC_LIBRARIES := libhealthd.t30
 # CMHW
 BOARD_HARDWARE_CLASS := device/acer/t30-common/cmhw/
 
+# updater-script
+TARGET_RELEASETOOLS_EXTENSIONS := device/acer/t30-common
+
 # Selinux
 FORCE_PERMISSIVE_TO_UNCONFINED := false
 
@@ -109,12 +120,3 @@ FORCE_PERMISSIVE_TO_UNCONFINED := false
 #        system_server.te \
 #        ueventd.te \
 #        vold.te
-
-# Recovery
-TARGET_RECOVERY_FSTAB := device/acer/t30-common/prebuilt/ramdisk/fstab.acer
-BOARD_HAS_NO_SELECT_BUTTON := true
-# Use this flag if the board has a ext4 partition larger than 2gb
-BOARD_HAS_LARGE_FILESYSTEM := true
-TARGET_RELEASETOOLS_EXTENSIONS := device/acer/t30-common
-BOARD_CUSTOM_BOOTIMG_MK := device/acer/t30-common/custombootimg.mk
-TARGET_NO_SEPARATE_RECOVERY := true
