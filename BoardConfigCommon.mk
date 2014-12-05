@@ -31,6 +31,7 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 # Use this flag if the board has a ext4 partition larger than 2gb
 BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_CUSTOM_BOOTIMG_MK := device/acer/t30-common/custombootimg.mk
+BOARD_CUSTOM_BOOTIMG := true
 
 # Wifi related defines
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
