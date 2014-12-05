@@ -1,5 +1,3 @@
-ANDROID_COMMON_BUILD_MK = true
-
 TARGET_BOARD_PLATFORM := tegra
 
 TARGET_CPU_ABI := armeabi-v7a
