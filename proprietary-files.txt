@@ -1,8 +1,6 @@
 bin/glgps_nvidiaTegra2android
 bin/nvcpud
-bin/rild
 bin/tf_daemon
-etc/acer_ril.db
 etc/enctune.conf
 etc/firmware/UartSet1024Kbps.bin
 etc/firmware/UartSet2048Kbps.bin
@@ -35,7 +33,6 @@ lib/libami.so
 lib/libami_sensor_mw.so
 lib/libardrv_dynamic.so
 lib/libcgdrv.so
-lib/libhuawei-ril.so
 lib/libmllite.so
 lib/libmlplatform.so
 lib/libmpl.so
