@@ -17,7 +17,7 @@
 
 <resources xmlns:xliff="urnasis:names:tc:xliff:document:1.2 ">
     <!-- Show Expanded Desktop preference -->
-    <bool name="config_show_expandedDesktop">true</bool>
+<!--    <bool name="config_show_expandedDesktop">true</bool>-->
 
     <!-- Whether the device support custom performance profiles. Leave empty when
          the device do not support it. -->
@@ -26,4 +26,7 @@
     <!-- When config_perf_profile_prop = true, then this value MUST be one of the
          values listed in cm_arrays for perf_profile_values -->
     <string name="config_perf_profile_default_entry" translatable="false">1</string>
+
+    <!-- Whether to show a preference item for mobile plan -->
+    <bool name="config_show_mobile_plan">false</bool>
 </resources>

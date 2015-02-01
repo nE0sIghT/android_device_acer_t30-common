@@ -16,9 +16,11 @@
 import common
 
 GSM_FILES = (
-  "/system/app/CellBroadcastReceiver.apk",
-  "/system/app/Stk.apk",
-  "/system/app/WhisperPush.apk",
+  "/system/priv-app/CellBroadcastReceiver",
+  "/system/priv-app/Mms",
+  "/system/priv-app/MmsService",
+  "/system/app/Stk",
+  "/system/app/WhisperPush",
   "/system/bin/rild",
   "/system/etc/acer_ril.db",
   "/system/etc/apns-conf.xml",
@@ -28,12 +30,18 @@ GSM_FILES = (
   "/system/etc/spn-conf.xml",
   "/system/lib/libcurve25519.so",
   "/system/lib/libhuawei-ril.so",
-  "/system/priv-app/Mms.apk",
 )
 
 def FullOTA_InstallEnd(info):
   # Remove GSM-specific files on wifi-only device
   info.script.AppendExtra("if getprop(\"ro.boot.carrier\") == \"wifi-only\" then")
   info.script.Print("Removing GSM-specific files...")
-  info.script.DeleteFiles(GSM_FILES);
+  # TODO: We need to mount /system first
+  DeleteFilesRecursive(info, GSM_FILES);
   info.script.AppendExtra("endif;")
+
+def DeleteFilesRecursive(info, file_list):
+  """Delete all files in file_list."""
+  if not file_list: return
+  cmd = "delete_recursive(" + ",\0".join(['"%s"' % (i,) for i in file_list]) + ");"
+  info.script.AppendExtra(info.script._WordWrap(cmd))

@@ -15,5 +15,7 @@
 /dev/block/platform/sdhci-tegra.3/by-name/USP           /staging            emmc      defaults                                              defaults
 
 # Vold
-/devices/platform/sdhci-tegra.0/mmc_host/mmc2           auto                auto      defaults                                              voldmanaged=sdcard1:auto
+# noemulatedsd is supposed to be used to indicated that there's no emulatedsd
+# but we do have one and it's kind of abused here to mark the storage for app2sd
+/devices/platform/sdhci-tegra.0/mmc_host/mmc2           auto                auto      defaults                                              voldmanaged=sdcard1:auto,noemulatedsd
 /devices/platform/tegra-ehci                            auto                auto      defaults                                              voldmanaged=usb0:auto

@@ -6,6 +6,7 @@ $(call inherit-product, device/common/gps/gps_us_supl.mk)
 DEVICE_PACKAGE_OVERLAYS += device/acer/t30-common/overlay
 
 PRODUCT_PROPERTY_OVERRIDES := \
+    ro.product.manufacturer=Acer \
     ro.opengles.version=131072 \
     sys.max_texture_size=2048 \
     persist.tegra.nvmmlite=1 \
@@ -17,7 +18,7 @@ PRODUCT_PROPERTY_OVERRIDES := \
 
 # Set default USB interface
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-	persist.sys.usb.config=mtp,adb
+	persist.sys.usb.config=mtp
 
 # Don't store dalvik on /cache, it gets annoying when /cache is wiped
 # by the bootloader everytime we boot into recovery
@@ -100,8 +101,19 @@ PRODUCT_COPY_FILES += \
 
 # media config xml file
 PRODUCT_COPY_FILES += \
+    frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_ffmpeg.xml:system/etc/media_codecs_ffmpeg.xml \
     device/acer/t30-common/prebuilt/etc/media_profiles.xml:system/etc/media_profiles.xml \
     device/acer/t30-common/prebuilt/etc/media_codecs.xml:system/etc/media_codecs.xml
+
+# Wi-Fi
+PRODUCT_PACKAGES += \
+ dhcpcd.conf \
+ hostapd \
+ wpa_supplicant \
+ wpa_supplicant.conf
 
 WIFI_BAND := 802_11_BG
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4330/device-bcm.mk)

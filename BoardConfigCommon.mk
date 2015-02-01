@@ -10,7 +10,7 @@ TARGET_CPU_VARIANT := cortex-a9
 
 TARGET_NO_BOOTLOADER := true
 
-BOARD_KERNEL_CMDLINE := 
+BOARD_KERNEL_CMDLINE := androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE := 2048
 
@@ -19,6 +19,8 @@ TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 6291456
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 629145600
+BOARD_CACHEIMAGE_PARTITION_SIZE := 1283457024
+BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 29905387520
 BOARD_FLASH_BLOCK_SIZE := 4096
 
@@ -30,6 +32,12 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_CUSTOM_BOOTIMG_MK := device/acer/t30-common/custombootimg.mk
 BOARD_CUSTOM_BOOTIMG := true
+
+# Include an expanded selection of fonts
+# TODO: check available system space
+# EXTENDED_FONT_FOOTPRINT := true
+
+MALLOC_IMPL := dlmalloc
 
 # Wifi related defines
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
@@ -61,9 +69,9 @@ BOARD_USES_GENERIC_INVENSENSE := false
 -include vendor/acer/t30-common/BoardConfigVendor.mk
 
 # Bluetooth
-#BOARD_HAVE_BLUETOOTH := true
-#BOARD_HAVE_BLUETOOTH_BCM := true
-#BOARD_BLUEDROID_VENDOR_CONF := device/acer/t30-common/libbt_vndcfg.txt
+BOARD_HAVE_BLUETOOTH := true
+BOARD_HAVE_BLUETOOTH_BCM := true
+BOARD_BLUEDROID_VENDOR_CONF := device/acer/t30-common/libbt_vndcfg.txt
 BOARD_HAVE_BLUETOOTH := false
 BOARD_HAVE_BLUETOOTH_BCM := false
 
@@ -76,6 +84,12 @@ TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
 
 # Sensors
 COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
+
+# OMX
+# ADD_LEGACY_SET_POSITION_SYMBOL: libnvwinsys.so
+# ADD_LEGACY_SURFACE_COMPOSER_CLIENT_SYMBOLS: libnvwinsys.so
+# ADD_LEGACY_MEMORY_DEALER_CONSTRUCTOR_SYMBOL: libnvomxadaptor.so
+COMMON_GLOBAL_CFLAGS += -DADD_LEGACY_SET_POSITION_SYMBOL -DADD_LEGACY_SURFACE_COMPOSER_CLIENT_SYMBOLS -DADD_LEGACY_MEMORY_DEALER_CONSTRUCTOR_SYMBOL
 
 # Camera
 USE_CAMERA_STUB := false
@@ -96,26 +110,24 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/acer/t30-common
 # Selinux
 FORCE_PERMISSIVE_TO_UNCONFINED := false
 
-#BOARD_SEPOLICY_DIRS += \
-#	device/acer/t30-common/sepolicy
+# Compat
+TARGET_USES_LOGD := false
 
-#BOARD_SEPOLICY_UNION += \
-#        file_contexts \
-#        genfs_contexts \
-#        bluetooth.te \
-#        device.te \
-#        domain.te \
-#        drmserver.te \
-#        init_shell.te \
-#        file.te \
-#        gpsd.te \
-#        keystore.te \
-#        lmkd.te \
-#        mediaserver.te \
-#        rild.te \
-#        sensors_config.te \
-#        surfaceflinger.te \
-#        system_app.te \
-#        system_server.te \
-#        ueventd.te \
-#        vold.te
+BOARD_SEPOLICY_DIRS += \
+	device/acer/t30-common/sepolicy
+
+BOARD_SEPOLICY_UNION += \
+	file_contexts \
+	genfs_contexts \
+	app.te \
+	bootanim.te \
+	device.te \
+	drmserver.te \
+	file.te \
+	lmkd.te \
+	mediaserver.te \
+	rild.te \
+	surfaceflinger.te \
+	system_app.te \
+	system_server.te \
+	ueventd.te
